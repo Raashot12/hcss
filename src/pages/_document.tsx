@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import {Html, Head, Main, NextScript} from "next/document"
 
 export default function Document() {
   return (
@@ -8,7 +8,6 @@ export default function Document() {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
-        <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
       <body className="antialiased">
         <Main />

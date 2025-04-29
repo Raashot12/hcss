@@ -8,6 +8,8 @@ type HeadTitleProps = {
 const HeadTitle = ({title}: HeadTitleProps) => (
   <Head>
     <title>{`HCSS - ${title}`}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg" />
   </Head>
 )
 
