@@ -1,40 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# HCSS Admin Dashboard
 
-## Getting Started
+A Next.js application that enables Healthcare Systems Solution administrators to bulk upload products via CSV or Excel files and manage product details through an intuitive dashboard interface.
 
-First, run the development server:
+## Features
 
+### Bulk Product Upload
+- **File Upload**: Support for both `.csv` and `.xlsx` file formats
+- **Data Preview**: Parse and display uploaded data for review before submission
+- **Validation**: Comprehensive validation for required fields and data formats
+- **Error Handling**: Clear error messages for invalid data
+
+### Product Management
+- **Data Table**: Responsive, sortable table of all products
+- **Editing**: Modal-based editing interface for product details
+- **Form Validation**: Input validation for all editable fields
+- **Real-time Updates**: Immediate UI updates after successful edits
+
+### User Experience
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Toast Notifications**: Informative feedback for user actions
+- **Loading States**: Visual feedback during API operations
+- **Error Handling**: User-friendly error messages
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Form Management**: React Hook Form for form validation and submission
+- **Data Parsing**: XLSX and PapaParse for file parsing
+- **State Management**: React Hooks
+- **API Mocking**: Local storage-based API simulation
+
+## Setup Instructions
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [your-repo-url]
+cd hcss-admin-dashboard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/src
+  /pages                 # Pages Router entry points
+    /index.tsx           # Main dashboard page
+    /_app.tsx            # Root app setup with providers
+    /_document.tsx       # Custom document
+  /components            # Reusable UI components
+    /BulkUpload.tsx      # File upload and parsing component
+    /ProductTable.tsx    # Product listing and editing component
+    /ui/Toaster.tsx      # Toast notification system
+  /lib                   # Utility functions and types
+    /api.ts              # API service functions
+    /types.ts            # TypeScript interfaces
+  /mocks                 # API mocking functionality
+    /handlers.ts         # Mock API endpoints
+    /browser.ts          # Browser mock setup
+```
 
-## Learn More
+## Testing
 
-To learn more about Next.js, take a look at the following resources:
+The application includes comprehensive testing:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```bash
+# Run all tests
+npm test
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run tests with coverage
+npm test -- --coverage
+```
 
-## Deploy on Vercel
+## Development Approach
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This application was developed with a focus on:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+1. **User Experience**: Intuitive interface with clear feedback
+2. **Code Quality**: Clean, modular code with TypeScript for type safety
+3. **Performance**: Efficient rendering and API communication
+4. **Maintainability**: Well-organized project structure and comprehensive documentation
+
+## Areas for Future Enhancement
+
+- User authentication and role-based access control
+- Advanced filtering and sorting options for the product table
+- Bulk export functionality
+- Integration with real backend services
+- Product category management
+- Batch operations for product updates
